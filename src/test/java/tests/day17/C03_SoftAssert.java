@@ -11,7 +11,7 @@ import utilities.TestBaseBeforeClassAfterClass;
 public class C03_SoftAssert extends TestBaseBeforeClassAfterClass {
     @Test
     public void test01() {
-        /*
+          /*
         SoftAssert başlangıç ve bitiş satırları arasındaki tüm assertion'ları yapıp
         bitiş olarak belirtmemiz gereken assertAll() metoduyla test metodumuzdaki bütün assertion'ları
         kontrol eder. Failed olan olursa assertion yaptığımız metodun sonuna yazdığımız mesajı bize
