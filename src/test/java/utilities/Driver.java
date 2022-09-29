@@ -21,11 +21,16 @@ public class Driver {
     açıyor. Eğer driver'e bir değer atanmamışsa yani driver==null; ise bir kere driver'i çalıştırır diyerek bir kere if()
     içini çalıştıracak.
      */
+    //POM'DE Driver icin TestBase class'ina extends etmek yerine Driver class'indan static methodlar kullanarak
+    //driver olusturup,ilgili ayarlarin yapilmasi ve en sonda driver'in kapatilmasi tercih edilmistir.
+    //testBase bizi bir kaliba sokar,derki her classtan once acarim sonra kapatirim..ben boyle istemiyorum,istedigim
+    // zaman acayim istersem kapatayim.bunu driver bize saglar.test base bizi her seferinde setup ve tearDown
+    // olusturmak tan kurtardi ama bizi kaliba soktu.
 
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            WebDriverManager.chromedriver().setup();
+    public static WebDriver getDriver() {  //bugune kadar TestBase classina extends ederek kullandigimiz driver yerine
+        if (driver == null) {              //bundan sonra Driver classindan kullanacagimiz getDriver static methodunu
+            WebDriverManager.chromedriver().setup();    //kullanacagiz
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
