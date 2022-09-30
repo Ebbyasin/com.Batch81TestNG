@@ -9,23 +9,21 @@ import java.util.Properties;
 public class ConfigReader {
 
     public static Properties properties;
-        static { //Her method'dan once calisir
-            String dosyaYolu="configuration.properties";
-            try {
-                FileInputStream fis=new FileInputStream(dosyaYolu);
-                properties=new Properties();
-                properties.load(fis); // fis'in okudugu bilgileri properties'e yukledi
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+    static { // Her method'dan önce çalışır
+        String dosyaYolu = "configuration.properties";
+        try {
+            FileInputStream fis = new FileInputStream(dosyaYolu);
+            properties = new Properties();
+            properties.load(fis); // fis'in okuduğu bilgileri properties'e yükledi
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
+    }
     public static String getProperty(String key){
         /*
-        test methodundan yolladigimiz string key degerini alip Properties
-         class indan getProperty() methodunu
-        kullanarak bu key e ait value'yu bize getirir
+        test metodundan yolladığımız string key değerini alıp
+        Properties class'ından getProperty() methodunu kullanarak
+        bu key'e ait value'yu bize getirir
          */
         return properties.getProperty(key);
     }
