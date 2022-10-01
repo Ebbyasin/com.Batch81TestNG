@@ -9,7 +9,9 @@ public class FaceBookPage {
 
     public FaceBookPage(){
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(),this); //oncelikle pageFactory i kullanarak driver imizin bu
+                                // classta gecerli oldugunu soyluyoruz,her pageClassinda bir kere yapariz.
+        //pageFactory clasindan initElements() methodunu kullanmak olmalidir.bununla driver clasimizdaki driveri tanityz
     }
 
     @FindBy(xpath = "//*[@id='email']")
