@@ -26,5 +26,7 @@ public class AmazonPage {   //page sayfalarinda zorunlu olmasada page ismini kul
     -sonra ilk olarak constructor olustururuz,class ismiyle ayni olan ,yaninda method parantezi olan.
     -bu constructor un icinde page fabrikasina gideriz,(PageFactory ile) sonra initElements deyip,driverimi bu class a
     tanitacagim.(benim driverim Driver clasin daki getDriver) ,this le gosteririz.
+    bugunu de bos geçmeyelim
+
      */
 }
