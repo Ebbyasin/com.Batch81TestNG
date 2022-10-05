@@ -40,6 +40,10 @@ public class Driver {
         if (driver == null) {           //bundan sonra Driver classindan kullanacagimiz getDriver static methodunu
             // driver==null -->driver a deger atanmamissa calis,atanmissa 34-37 arasi calismaz,direk return a gider.
               switch (ConfigReader.getProperty("browser")){
+                  case "chrome":
+                      WebDriverManager.chromedriver().setup();
+                      driver=new ChromeDriver();
+                      break;
                   case "edge":
                       WebDriverManager.edgedriver().setup();
                       driver=new EdgeDriver();
